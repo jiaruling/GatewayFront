@@ -27,7 +27,7 @@ export function appStat(query) {
 export function appDelete(query) {
   return request({
     url: '/app/app_delete',
-    method: 'get',
+    method: 'delete',
     params: query
   })
 }
@@ -43,7 +43,7 @@ export function appAdd(data) {
 export function appUpdate(data) {
   return request({
     url: '/app/app_update',
-    method: 'post',
+    method: 'put',
     data
   })
 }

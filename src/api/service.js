@@ -11,7 +11,7 @@ export function serviceList(query) {
 export function serviceDelete(query) {
   return request({
     url: '/service/service_delete',
-    method: 'get',
+    method: 'delete',
     params: query
   })
 }
@@ -27,7 +27,7 @@ export function serviceAddHttp(data) {
 export function serviceUpdateHttp(data) {
   return request({
     url: '/service/service_update_http',
-    method: 'post',
+    method: 'put',
     data
   })
 }
@@ -59,7 +59,7 @@ export function serviceAddTcp(data) {
 export function serviceUpdateTcp(data) {
   return request({
     url: '/service/service_update_tcp',
-    method: 'post',
+    method: 'put',
     data
   })
 }
@@ -75,7 +75,7 @@ export function serviceAddGrpc(data) {
 export function serviceUpdateGrpc(data) {
   return request({
     url: '/service/service_update_grpc',
-    method: 'post',
+    method: 'put',
     data
   })
 }
