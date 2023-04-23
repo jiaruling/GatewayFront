@@ -67,7 +67,7 @@ export const constantRoutes = [
       meta: {
         title: '服务列表',
         icon: 'component',
-        affix: true
+        affix: false
       }
     },
     {

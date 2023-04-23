@@ -70,7 +70,7 @@ export default {
     Hamburger,
     ErrorLog,
     Screenfull,
-    SizeSelect,
+    SizeSelect
   },
   data() {
     return {
@@ -113,6 +113,7 @@ export default {
               type: 'success',
               duration: 2000
             })
+            setTimeout(this.logout, 2000)
           })
         }
       })
