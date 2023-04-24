@@ -103,6 +103,7 @@
     <pagination
       v-show="total > 0"
       :total="total"
+      :pageSizes="pageSizes"
       :page.sync="listQuery.page_no"
       :limit.sync="listQuery.page_size"
       @pagination="getList"
@@ -128,9 +129,10 @@ export default {
       list: null,
       total: 0,
       listLoading: true,
+      pageSizes: [10, 20, 30, 50],
       listQuery: {
         page_no: 1,
-        page_size: 20,
+        page_size: 10,
         info: ''
       },
       parentsProps: { checkStrictly: true, value: 'id', label: 'name', children: 'children' },

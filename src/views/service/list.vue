@@ -100,7 +100,14 @@
       </el-table-column>
     </el-table>
 
-    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
+    <pagination
+      v-show="total>0"
+      :total="total"
+      :pageSizes="pageSizes"
+      :page.sync="listQuery.page_no"
+      :limit.sync="listQuery.page_size"
+      @pagination="getList"
+    />
   </div>
 </template>
 
@@ -135,9 +142,10 @@ export default {
       list: null,
       total: 0,
       listLoading: true,
+      pageSizes: [10, 20, 30, 50],
       listQuery: {
         page_no: 1,
-        page_size: 20,
+        page_size: 10,
         info: ''
       },
       temp: {
@@ -149,6 +157,7 @@ export default {
     this.getList()
   },
   methods: {
+
     getList() {
       this.listLoading = true
       serviceList(this.listQuery).then(response => {
